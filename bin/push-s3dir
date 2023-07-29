@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -Ceu
+
+S3ARCHIVER_PATH=$(cd $(dirname $0)/..; pwd)
+
+while [ "$#" != 0 ]; do
+    bash $S3ARCHIVER_PATH/lib/push-s3dir.sh $1
+    shift
+done
+

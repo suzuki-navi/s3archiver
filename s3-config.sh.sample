@@ -1,0 +1,2 @@
+s3_archive_bucket=BUCKET_NAME
+s3_archive_prefix=PREFIX_WITHOUT_TRAILING_SLASH

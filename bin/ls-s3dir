@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -Ceu
+
+S3ARCHIVER_PATH=$(cd $(dirname $0)/..; pwd)
+
+. $S3ARCHIVER_PATH/s3-config.sh
+
+echo s3://$s3_archive_bucket/$s3_archive_prefix/
+aws s3 ls s3://$s3_archive_bucket/$s3_archive_prefix/
+
