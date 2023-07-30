@@ -20,7 +20,7 @@ name=$(basename $target)
 
 . $S3ARCHIVER_PATH/s3-config.sh
 
-archive_dir=$S3ARCHIVER_PATH/archive
+archive_dir=$(cd $target/..; pwd)/.$name.archive
 mkdir -p $archive_dir
 
 s3_last_ls_line=$(aws s3 ls s3://$s3_archive_bucket/$s3_archive_prefix/$name.tar.gz. | LC_ALL=C sort | tail -n1)
