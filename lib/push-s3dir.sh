@@ -60,7 +60,7 @@ fi
 (
     cd $(dirname $target)
 
-    if [ -n $(ls -A) ]; then
+    if [ -n "$(ls -A)" ]; then
         echo "$target is not empty" >&2
         exit 1
     fi
