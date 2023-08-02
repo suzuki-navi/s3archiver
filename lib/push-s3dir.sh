@@ -59,12 +59,6 @@ fi
 
 (
     cd $(dirname $target)
-
-    if [ -n "$(ls -A)" ]; then
-        echo "$target is not empty" >&2
-        exit 1
-    fi
-
     tar cf - $name | gzip -n -c > $archive_dir/$name.tar.gz.$next_last_num.tmp
 )
 mv $archive_dir/$name.tar.gz.$next_last_num.tmp $archive_dir/$name.tar.gz.$next_last_num
